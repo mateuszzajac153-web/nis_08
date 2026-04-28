@@ -11,31 +11,27 @@
     <header>
         <h1>Sklep Spożywczy</h1>
         <nav>
-            <a href="index.html" class="active">Lista produktów</a>
-            <a href="#">Koszyk</a> </nav>
+            <a href="index.html" class="active">1. Lista produktów</a>
+            <a href="cart.html">2. Koszyk</a>
+            <a href="order.html">3. Zamówienie</a>
+        </nav>
     </header>
 
     <main>
         <section id="shop-section">
-            <h2>Dostępne produkty</h2>
+            <header class="section-header">
+                <h2>Dostępne produkty</h2>
+                <p>Kliknij przycisk, aby dodać produkt do koszyka (zapis do localStorage).</p>
+            </header>
+            
             <div id="product-list" class="grid-container">
                 </div>
         </section>
-
-        <hr>
-
-        <section id="order-section">
-            <h2>Podsumowanie i Zamówienie</h2>
-            <div id="order-summary">
-                <p>Twój koszyk jest pusty.</p>
-            </div>
-            <form id="order-form">
-                <input type="text" id="user-name" placeholder="Twoje imię i nazwisko" required>
-                <input type="email" id="user-email" placeholder="Adres e-mail" required>
-                <button type="submit" id="confirm-order">Potwierdzam zamówienie</button>
-            </form>
-        </section>
     </main>
+
+    <footer>
+        <p>&copy; 2026 Projekt nisp_08 - Student A & Student B</p>
+    </footer>
 
     <script src="script.js"></script>
 </body>
