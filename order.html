@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>nisp_08_shopping - Zamówienie</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header>
+        <h1>Sklep Spożywczy</h1>
+        <nav>
+            <a href="index.html">1. Lista produktów</a>
+            <a href="cart.html">2. Koszyk</a>
+            <a href="order.html" class="active">3. Zamówienie</a>
+        </nav>
+    </header>
+
+    <main>
+        <section id="order-section">
+            <header class="section-header">
+                <h2>Podsumowanie Zamówienia</h2>
+                <p>Wypełnij formularz, aby sfinalizować zakupy.</p>
+            </header>
+
+            <div id="order-summary" class="summary-box">
+                <p>Klikając przycisk poniżej, potwierdzasz chęć zakupu produktów znajdujących się w koszyku.</p>
+            </div>
+
+            <form id="order-form" class="form-container">
+                <div class="form-group">
+                    <label for="user-name">Imię i Nazwisko:</label>
+                    <input type="text" id="user-name" placeholder="np. Jan Kowalski" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="user-email">Adres E-mail:</label>
+                    <input type="email" id="user-email" placeholder="np. jan@poczta.pl" required>
+                </div>
+
+                <button type="submit" id="confirm-order-btn">Potwierdzam zamówienie i płacę</button>
+            </form>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 Projekt nisp_08 - Student A & Student B</p>
+    </footer>
+
+    <script>
+        document.getElementById('order-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const name = document.getElementById('user-name').value;
+            
+            // Logika Studenta A: Czyszczenie koszyka w localStorage
+            localStorage.removeItem('cart');
+            
+            alert(`Dziękujemy ${name}! Zamówienie zostało złożone, a koszyk wyczyszczony.`);
+            
+            // Powrót do strony głównej po 1 sekundzie
+            setTimeout(() => {
+                window.location.href = 'index.html';
+            }, 1000);
+        });
+    </script>
+</body>
+</html>
